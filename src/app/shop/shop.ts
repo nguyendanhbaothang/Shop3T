@@ -6,3 +6,5 @@ export interface Product {
   image:{ url: string};
   description: any;
 }
+
+

@@ -5,19 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shop/components/footer.component';
 import { HeaderComponent } from './shop/components/header.component';
-import { HomeComponent } from './shop/components/home.component';
+import { ShopRoutingModule } from './shop/shop-routing.module';
+import { ShopModule } from './shop/shop.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    HomeComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ShopModule,
+    ShopRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
