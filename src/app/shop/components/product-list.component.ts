@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ShopService } from '../shop.service';
 
@@ -6,7 +6,7 @@ import { ShopService } from '../shop.service';
   selector: 'app-product-list',
   templateUrl: '../templates/product-list.component.html',
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
 
   constructor(private shopService: ShopService) { }
   products: any[] = [];
