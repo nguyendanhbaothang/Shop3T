@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShopComponent } from './shop.component';
 import { HomeComponent } from './components/home.component';
+import { ProductListComponent } from './components/product-list.component';
 
 
 
 @NgModule({
   declarations: [
-    ShopComponent,
-    HomeComponent
+    HomeComponent,
+    ProductListComponent,
+
   ],
   imports: [
     CommonModule
