@@ -7,6 +7,8 @@ import { ShopService } from '../shop.service';
   templateUrl: '../templates/product-list.component.html',
 })
 export class ProductListComponent implements OnInit {
+  toastr: any;
+  orderService: any;
 
   constructor(private shopService: ShopService) { }
   products: any[] = [];
@@ -17,8 +19,18 @@ export class ProductListComponent implements OnInit {
   }
 
   product_list(){
-    this.shopService.product_list().subscribe(res =>{
-      this.products = res;
+    this.shopService.product_list().subscribe((res: { data: any; }) =>{
+      let products = res.data;
+      this.products = products;
+
+    })
+  }
+
+  addToCart(id: number) {
+    this.shopService.addToCart(id).subscribe(res => {
+      this.toastr.alert('Thành công', 'Thêm vào giỏ hàng!');
+      console.log(this.shopService);
+
     })
   }
 }
