@@ -7,19 +7,24 @@ import { FooterComponent } from './shop/components/footer.component';
 import { HeaderComponent } from './shop/components/header.component';
 import { ShopRoutingModule } from './shop/shop-routing.module';
 import { ShopModule } from './shop/shop.module';
-
+import { ListorderComponent } from './shop/components/listorder.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
+    ListorderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ShopModule,
-    ShopRoutingModule
+    ShopRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
