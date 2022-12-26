@@ -9,27 +9,24 @@ import { Product } from "./shop";
   providedIn: 'root'
 })
 export class ShopService {
-addToCartByLike(id: number) {
-  throw new Error('Method not implemented.');
-}
 
 
 
 constructor(private http: HttpClient) {}
 
-product_list(): any {
-  return this.http.get(environment.urlAllProducts);
+product_list(page:any): any {
+  return this.http.get(environment.urlAllProducts + "?page="+page);
 }
 product_detail(id:any): any{
   return this.http.get(environment.urlIdProduct+'/'+id)
 }
 getListOrder(id: any){
-  return this.http.get(environment.urlListOrde+id);
+  return this.http.get(environment.urlListOrde);
 }
 addToCart(id: number){
   return this.http.get(environment.urlAddToCart+id);
 }
-getAllCart(){
+getAllCart(id:any){
   return this.http.get(environment.urlGetAllCart);
 }
 }

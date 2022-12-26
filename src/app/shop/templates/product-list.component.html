@@ -1,3 +1,8 @@
+<style>
+ pagination-controls {
+    margin: 0px 0px 0px 434px;
+}
+</style>
 <div class="container-fluid">
   <div class="row px-xl-5">
       <!-- Shop Sidebar Start -->
@@ -148,38 +153,28 @@
                       </div>
                   </div>
               </div>
-              <div class="col-lg-4 col-md-6 col-sm-6 pb-1" *ngFor="let product of products; let i =index"  >
+              <div class="col-lg-4 col-md-6 col-sm-6 pb-1" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p, totalItems: total }; let i = index">
+
 
                   <div class="product-item bg-light mb-4">
                       <div class="product-img position-relative overflow-hidden">
                         <img id="imageprd" [src]="url+'public/assets/product/'+product.image" [alt]="product.name" />
                           <div class="product-action">
-                              <a class="btn btn-outline-dark btn-square"  ><i (click)="addToCart(product.id)"  class="fa fa-shopping-cart"></i></a>
+                              <a class="btn btn-outline-dark btn-square"  ><i  (click)="addToCart(product.id)" class="fa fa-shopping-cart"></i></a>
                               <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
                               <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
                               <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
                           </div>
                       </div>
                       <div class="text-center py-4">
-                          <a class="h6 text-decoration-none text-truncate" href="">{{ product.name}}</a>
+                               <a class="h6 text-decoration-none text-truncate" routerLink='/product-detail/{{product.id}}'>{{ product.name}}</a>
                           <div class="d-flex align-items-center justify-content-center mt-2">
-                              <h5>{{ product.price |number}} VND</h5><h6 class="text-muted ml-2"><del>{{ product.price |number}} VND</del></h6>
+                              <h5>{{ product.price -100000|number}} VND</h5><h6 class="text-muted ml-2"><del>{{ product.price |number }} VND</del></h6>
                           </div>
                       </div>
                   </div>
               </div>
-
-              <div class="col-12">
-                  <nav>
-                    <ul class="pagination justify-content-center">
-                      <li class="page-item disabled"><a class="page-link" href="">Previous </a></li>
-                      <li class="page-item active"><a class="page-link" href="">1</a></li>
-                      <li class="page-item"><a class="page-link" href="">2</a></li>
-                      <li class="page-item"><a class="page-link" href="">3</a></li>
-                      <li class="page-item"><a class="page-link" href="">Next</a></li>
-                    </ul>
-                  </nav>
-              </div>
+              <pagination-controls  previousLabel="Trang sau" nextLabel="Trang tiếp" (pageChange)="pageChangeEvent($event)"></pagination-controls>
           </div>
       </div>
       <!-- Shop Product End -->
