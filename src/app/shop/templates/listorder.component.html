@@ -8,60 +8,21 @@
                       <tr>
                           <th>Tên sản phẩm</th>
                           <th>số lượng</th>
-                          <th>Tổng tiền</th>
+                          <th>Giá</th>
                           <th>Gỡ bỏ</th>
                       </tr>
                   </thead>
                   <tbody class="align-middle">
                       <tr *ngFor="let  orders of order">
 
-                          <td class="align-middle">Thắng</td>
-                          <td class="align-middle">
-                              <div class="input-group quantity mx-auto" style="width: 100px;">
-                                  <div class="input-group-btn">
-                                      <button class="btn btn-sm btn-primary btn-minus" >
-                                      <i class="fa fa-minus"></i>
-                                      </button>
-                                  </div>
-                                  <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="1">
-                                  <div class="input-group-btn">
-                                      <button class="btn btn-sm btn-primary btn-plus">
-                                          <i class="fa fa-plus"></i>
-                                      </button>
-                                  </div>
-                              </div>
-                          </td>
-                          <td class="align-middle">$150</td>
+                          <td class="align-middle">{{ orders.name}}</td>
+                          <td class="align-middle">{{ orders.quantity}}</td>
+
+                          <td class="align-middle">{{ orders.price |number }} VND</td>
                           <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
                       </tr>
                   </tbody>
               </table>
-          </div>
-
-
-
-
-          <div class="col-lg-4">
-              <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Tóm tắt giỏ hàng</span></h5>
-              <div class="bg-light p-30 mb-5">
-                  <div class="border-bottom pb-2">
-                      <div class="d-flex justify-content-between mb-3">
-                          <h6>Tổng tiền sản phẩm</h6>
-                          <h6>$150</h6>
-                      </div>
-                      <div class="d-flex justify-content-between">
-                          <h6 class="font-weight-medium">Tiền ship</h6>
-                          <h6 class="font-weight-medium">$10</h6>
-                      </div>
-                  </div>
-                  <div class="pt-2">
-                      <div class="d-flex justify-content-between mt-2">
-                          <h5>Tổng tiền</h5>
-                          <h5>$160</h5>
-                      </div>
-                      <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Thanh toán</button>
-                  </div>
-              </div>
           </div>
       </div>
   </div>
