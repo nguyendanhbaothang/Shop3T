@@ -9,11 +9,9 @@ export interface Product {
 export interface Order{
   note?: any;
   address: any;
-  province_id: any;
-  district_id: any;
-  ward_id: any;
   name_customer: any;
   customer_id: any;
+  image:{ url: string};
   phone: any;
 }
 

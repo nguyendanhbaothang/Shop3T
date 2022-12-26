@@ -10,7 +10,8 @@ import { ShopModule } from './shop/shop.module';
 import { ListorderComponent } from './shop/components/listorder.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,8 @@ import { FormsModule } from '@angular/forms';
     ShopRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgxPaginationModule,
+    ToastrModule
   ],
   providers: [],
   bootstrap: [AppComponent]

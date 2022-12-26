@@ -191,9 +191,12 @@ figure {
   margin: 0 0 1rem;
 }
 
+
 img {
   vertical-align: middle;
   border-style: none;
+  width: 380px;
+  height: 290px;
 }
 
 svg {
