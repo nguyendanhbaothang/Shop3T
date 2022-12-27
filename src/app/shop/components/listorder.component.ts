@@ -8,10 +8,14 @@ import { ShopService } from '../shop.service';
   templateUrl: '../templates/listorder.component.html',
 })
 export class ListorderComponent {
+  [x: string]: any;
   customer_id: any;
   order: any;
   totalPrice: number = 0;
+  getAllCart:any;
   url: string = environment.url;
+  url_image = this.url + 'public/assets/product/';
+  message : {} = {};
   constructor(
     private ShopService: ShopService,
     private route: ActivatedRoute,
@@ -22,9 +26,17 @@ export class ListorderComponent {
       this.order = res;
       console.log(this.order);
 
-      for (let orderDetail of this.order.orders.order_details) {
-        this.totalPrice += parseInt(orderDetail.price_at_time) * parseInt(orderDetail.quantity);
-      }
     })
   }
+  deleteCart(id:number){
+    this.ShopService.RemoveToCart(id).subscribe(res => {
+     this.message = res;
+     window.location.reload();
+    })
+  }
+  updateQuantity(id: any, quantity: any){
+    this.ShopService.updateQuantity(id, quantity).subscribe(res => {
+        this.getAllCart();
+    });
+}
 }

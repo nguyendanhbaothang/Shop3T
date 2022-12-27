@@ -15,7 +15,7 @@ export class ShopService {
 constructor(private http: HttpClient) {}
 
 product_list(page:any): any {
-  return this.http.get(environment.urlAllProducts + "?page="+page);
+  return this.http.get(environment.urlAllProducts +'/'+ "?page="+page);
 }
 product_detail(id:any): any{
   return this.http.get(environment.urlIdProduct+'/'+id)
@@ -28,5 +28,11 @@ addToCart(id: number){
 }
 getAllCart(id:any){
   return this.http.get(environment.urlGetAllCart);
+}
+RemoveToCart(id:any){
+  return this.http.get(environment.urlRemoveToCart+id);
+}
+updateQuantity(id: any, quantity: any){
+  return this.http.get(environment.urlUpdateQuantity+id+'/'+quantity);
 }
 }

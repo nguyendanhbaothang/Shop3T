@@ -31,14 +31,16 @@ export class ProductDetailComponent {
     this.id = this._route.snapshot.params['id'];
     this.shopService.product_detail(this.id).subscribe((res: any) => {
       this.products = res;
-      console.log(this.products);
+      // console.log(this.products);
     });
   }
 
-  addToCart(id: number) {
-    this.shopService.addToCart(id).subscribe(res => {
+  getCart(id:number) {
+    this.shopService.addToCart(this.id).subscribe(res => {
      alert('Thành công Thêm vào giỏ hàng!');
     })
+
   }
+
 
 }
