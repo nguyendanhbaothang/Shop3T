@@ -7,13 +7,22 @@ import { ShopService } from '../shop.service';
   templateUrl: '../templates/home.component.html',
 })
 export class HomeComponent {
-  constructor(
-    private shopService : ShopService,
-
-
-    ) { }
+  products:any[] = [];
   url: string = environment.url;
   trending_top:any[] =[];
+  constructor(
+    private shopService : ShopService,
+  ) { }
+
+  ngOnInit (){
+    this.shopService.product_list(1).subscribe((res: { data: any;total:any}) => {
+      console.log(res);
+      
+      let products = res.data;
+      this.products = products;
+    })
+  }
+
 
 
 
