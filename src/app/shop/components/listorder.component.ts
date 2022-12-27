@@ -39,4 +39,7 @@ export class ListorderComponent {
         this.getAllCart();
     });
 }
+updateCart(){
+  window.location.reload();
+}
 }

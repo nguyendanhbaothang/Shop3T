@@ -11,14 +11,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ToastrModule } from 'ngx-toastr';
-import { ProductHotComponent } from './product-hot/product-hot.component';
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
     // ListorderComponent,
-    ProductHotComponent,
   ],
   imports: [
     BrowserModule,
