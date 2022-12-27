@@ -13,27 +13,27 @@ export class ProductListComponent implements OnInit {
 
   products: any[] = [];
   cate_id: any;
-  p: number = 1;
+  limit: number = 1;
   total: number = 0;
   itemsPerPage :number =0;
   url: string = environment.url;
   orderService: any;
   listCart: any;
   cartSubtotal: number = 0;
+  active = 0;
   ngOnInit(): void {
     this.product_list();
-    console.log(this.product_list());
   }
 
   product_list() {
-    this.shopService.product_list(1).subscribe((res: { data: any;total:any}) => {
+    this.shopService.product_list(this?.limit).subscribe((res: { data: any; total:any}) => {
       this.total=res.total;
-      let products = res.data;
-      this.products = products;
+      this.products = res.data;
+      console.log(this.products);
     })
   }
   pageChangeEvent(page: number){
-    this.p = page;
+    this.limit = page;
     this.shopService.product_list(page).subscribe((res: { data: any; }) => {
       let products = res.data;
       this.products = products;

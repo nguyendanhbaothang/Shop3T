@@ -8,14 +8,16 @@ import { ShopComponent } from './shop.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ProductDetailComponent } from './components/product-detail.component';
+import { ListorderComponent } from './components/listorder.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     ProductListComponent,
     ShopComponent,
-
-
+    ProductDetailComponent,
+    ListorderComponent
   ],
   imports: [
     CommonModule,

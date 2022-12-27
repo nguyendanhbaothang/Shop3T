@@ -12,6 +12,7 @@ export class ListorderComponent {
   order: any;
   totalPrice: number = 0;
   url: string = environment.url;
+  message : {} = {};
   constructor(
     private ShopService: ShopService,
     private route: ActivatedRoute,
@@ -22,9 +23,12 @@ export class ListorderComponent {
       this.order = res;
       console.log(this.order);
 
-      for (let orderDetail of this.order.orders.order_details) {
-        this.totalPrice += parseInt(orderDetail.price_at_time) * parseInt(orderDetail.quantity);
-      }
+    })
+  }
+  deleteCart(id:number){
+    this.ShopService.RemoveToCart(id).subscribe(res => {
+     this.message = res;
+     window.location.reload();
     })
   }
 }

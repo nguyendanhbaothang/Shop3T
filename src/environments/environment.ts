@@ -7,4 +7,5 @@ export const environment = {
   urlAddToCart : urlApi+'add-to-cart/',
   urlGetAllCart : urlApi+'list-cart',
   urlIdProduct : urlApi+'product_detail',
+  urlRemoveToCart : urlApi+'remove-to-cart/',
 };

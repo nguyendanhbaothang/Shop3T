@@ -31,11 +31,11 @@
                     </div>
                     <small class="pt-1">(99 Đánh giá)</small>
                 </div>
-                  <h3 class="font-weight-semi-bold mb-4">{{ products.price}} VNĐ</h3>
+                  <h3 class="font-weight-semi-bold mb-4">{{ products.price | currency:'VND'}} </h3>
 
 
                   <div class="d-flex align-items-center mb-4 pt-2">
-                    <button class="btn btn-primary px-3" ><i class="fa fa-shopping-cart mr-1" (click)="addToCart(product.id)" ></i> Thêm vào giỏ hàng</button>
+                    <a class="btn btn-primary px-3" (click)="getCart(id)"><i class="fa fa-shopping-cart mr-1"  ></i> Thêm vào giỏ hàng</a>
                 </div>
                   <div class="d-flex pt-2">
                       <strong class="text-dark mr-2">Chia sẽ:</strong>
