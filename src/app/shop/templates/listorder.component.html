@@ -9,6 +9,7 @@
                           <th>Tên sản phẩm</th>
                           <th>số lượng</th>
                           <th>Giá</th>
+                          <th>Tổng</th>
                           <th>Gỡ bỏ</th>
                       </tr>
                   </thead>
@@ -19,7 +20,8 @@
                           <td class="align-middle">{{ orders.quantity}}</td>
 
                           <td class="align-middle">{{ orders.price |number }} VND</td>
-                          <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
+                          <td class="align-middle">{{ orders.price * orders.quantity  |number }} VND</td>
+                          <td class="align-middle"><button class="btn btn-sm btn-danger" (click)="deleteCart(orders.id)"><i class="fa fa-times"></i></button></td>
                       </tr>
                   </tbody>
               </table>

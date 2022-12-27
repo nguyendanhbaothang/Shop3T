@@ -153,8 +153,7 @@
                       </div>
                   </div>
               </div>
-              <div class="col-lg-4 col-md-6 col-sm-6 pb-1" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p, totalItems: total }; let i = index">
-
+              <div class="col-lg-4 col-md-6 col-sm-6 pb-1" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: limit, totalItems: total }; let i = index">
 
                   <div class="product-item bg-light mb-4">
                       <div class="product-img position-relative overflow-hidden">

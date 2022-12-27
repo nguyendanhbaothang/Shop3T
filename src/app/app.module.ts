@@ -7,7 +7,6 @@ import { FooterComponent } from './shop/components/footer.component';
 import { HeaderComponent } from './shop/components/header.component';
 import { ShopRoutingModule } from './shop/shop-routing.module';
 import { ShopModule } from './shop/shop.module';
-import { ListorderComponent } from './shop/components/listorder.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -17,7 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    ListorderComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -27,7 +26,8 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
-    ToastrModule
+    ToastrModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
