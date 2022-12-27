@@ -32,4 +32,7 @@ getAllCart(id:any){
 RemoveToCart(id:any){
   return this.http.get(environment.urlRemoveToCart+id);
 }
+updateQuantity(id: any, quantity: any){
+  return this.http.get(environment.urlUpdateQuantity+id+'/'+quantity);
+}
 }
