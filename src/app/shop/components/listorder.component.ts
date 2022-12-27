@@ -8,10 +8,13 @@ import { ShopService } from '../shop.service';
   templateUrl: '../templates/listorder.component.html',
 })
 export class ListorderComponent {
+  [x: string]: any;
   customer_id: any;
   order: any;
   totalPrice: number = 0;
+  getAllCart:any;
   url: string = environment.url;
+  url_image = this.url + 'public/assets/product/';
   message : {} = {};
   constructor(
     private ShopService: ShopService,
@@ -31,4 +34,9 @@ export class ListorderComponent {
      window.location.reload();
     })
   }
+  updateQuantity(id: any, quantity: any){
+    this.ShopService.updateQuantity(id, quantity).subscribe(res => {
+        this.getAllCart();
+    });
+}
 }

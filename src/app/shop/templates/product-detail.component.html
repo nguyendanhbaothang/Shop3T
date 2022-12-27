@@ -31,7 +31,7 @@
                     </div>
                     <small class="pt-1">(99 Đánh giá)</small>
                 </div>
-                  <h3 class="font-weight-semi-bold mb-4">{{ products.price | currency:'VND'}} </h3>
+                  <h3 class="font-weight-semi-bold mb-4">{{ products.price -100000| currency:'VND'}} </h3>
 
 
                   <div class="d-flex align-items-center mb-4 pt-2">
@@ -69,11 +69,8 @@
 
                         <h3>   <span style="font-size: 13px" [innerHTML]=" products.description "></span></h3>
                       </div>
-
-
                   </div>
               </div>
           </div>
       </div>
   </div>
-  <!-- Shop Detail End -->
