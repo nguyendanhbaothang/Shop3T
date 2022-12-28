@@ -12,6 +12,11 @@ import { ProductDetailComponent } from './components/product-detail.component';
 import { ListorderComponent } from './components/listorder.component';
 import { ProductHotComponent } from './components/product-hot.component';
 import { ProductNewComponent } from './components/product-new.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +35,12 @@ import { ProductNewComponent } from './components/product-new.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatSliderModule,
+    MatInputModule
+
 
   ]
 })
