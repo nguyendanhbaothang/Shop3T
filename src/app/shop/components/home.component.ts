@@ -7,17 +7,18 @@ import { ShopService } from '../shop.service';
   templateUrl: '../templates/home.component.html',
 })
 export class HomeComponent {
-  products:any[] = [];
+  products: any[] = [];
   url: string = environment.url;
-  trending_top:any[] =[];
+  trending_top: any[] = [];
   constructor(
-    private shopService : ShopService,
+    private shopService: ShopService,
   ) { }
   limit: number = 1;
-    total: number = 0;
+  total: number = 0;
 
-  ngOnInit (){
-    this.shopService.product_list(1).subscribe((res: { data: any;total:any}) => {
+
+  ngOnInit() {
+    this.shopService.product_list(1).subscribe((res: { data: any; total: any }) => {
       // console.log(res);
 
       let products = res.data;
@@ -26,15 +27,15 @@ export class HomeComponent {
   }
 
   product_list() {
-    this.shopService.product_list(this?.limit).subscribe((res: { data: any; total:any}) => {
-      this.total=res.total;
+    this.shopService.product_list(this?.limit).subscribe((res: { data: any; total: any }) => {
+      this.total = res.total;
       this.products = res.data;
       console.log(this.products);
     })
   }
   addToCart(id: number) {
     this.shopService.addToCart(id).subscribe(res => {
-     alert('Thành công Thêm vào giỏ hàng!');
+      alert('Thành công Thêm vào giỏ hàng!');
     })
   }
 }

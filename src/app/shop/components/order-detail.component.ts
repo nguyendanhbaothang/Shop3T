@@ -21,7 +21,7 @@ export class OrderDetailComponent {
     this.orderId = this.route.snapshot.params['id'];
     this.ShopService.showOrder(this.orderId).subscribe(res => {
       this.order = res;
-      for(let orderDetail of this.order.order_details){
+      for (let orderDetail of this.order.order_details) {
         this.totalPrice += parseInt(orderDetail.price_at_time) * parseInt(orderDetail.quantity);
       }
     })

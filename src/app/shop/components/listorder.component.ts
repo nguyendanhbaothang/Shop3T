@@ -16,12 +16,14 @@ export class ListorderComponent {
   url: string = environment.url;
   url_image = this.url + 'public/assets/product/';
   message: {} = {};
+  cartSubtotal: number = 0;
   constructor(
     private ShopService: ShopService,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
+
     this.ShopService.getListOrder(this.customer_id).subscribe(res => {
       this.order = res;
       console.log(this.order);
@@ -39,10 +41,10 @@ export class ListorderComponent {
       })
     })
   }
-  updateQuantity(id: any, quantity: any){
+  updateQuantity(id: any, quantity: any) {
     this.ShopService.updateQuantity(id, quantity).subscribe(res => {
-        this.getAllCart();
+      this.getAllCart();
     });
-}
+  }
 
 }
