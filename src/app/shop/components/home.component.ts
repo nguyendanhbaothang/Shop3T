@@ -18,7 +18,7 @@ export class HomeComponent {
 
   ngOnInit (){
     this.shopService.product_list(1).subscribe((res: { data: any;total:any}) => {
-      console.log(res);
+      // console.log(res);
 
       let products = res.data;
       this.products = products;

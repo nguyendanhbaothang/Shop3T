@@ -1,4 +1,10 @@
 <!-- Topbar Start -->
+<style>
+  img[class="imagesearh"]{
+    width: 100px;
+    height: 100px;
+  }
+</style>
 <div class="container-fluid">
   <div class="row bg-secondary py-1 px-xl-5">
     <div class="col-lg-6 d-none d-lg-block">
@@ -36,26 +42,29 @@
 
 
 
-    <div class="col-lg-4 col-6 text-left">
-      <form action="">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for products" (input)="handdleSearch($event)" >
-          <mat-autocomplete #auto="matAutocomplete">
-            <ng-container *ngFor="let product of products ">
-              <a (click)="reloadCurrentPage(product.id)">
-                <mat-option class="search_main" [value]="product.name">
-                  <span><img class="search_image" [src]="url+product.image" [alt]="product.name">
-                    {{product.name}}
-                    <b class="price_search">{{ product.price | currency
-                      }}</b></span>
-                </mat-option>
-              </a>
-              <hr>
-            </ng-container>
-          </mat-autocomplete>
-        </div>
-      </form>
-    </div>
+
+      <div class="col-lg-4 col-6 text-left">
+        <form action="">
+          <div class="search-input">
+            <input type="text" class="form-control" placeholder="tìm" aria-label="Number" matInput
+              (input)="handdleSearch($event)" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+              <ng-container *ngFor="let product of products ">
+                <a (click)="reloadCurrentPage(product.id)">
+                  <mat-option class="search_main" [value]="product.name">
+                    <span><img class="imagesearh" [src]="url+'public/assets/product/'+product.image"  [alt]="product.name">
+                      {{product.name}}
+                      <b class="price_search">Giá: {{ product.price | currency : 'VND'
+                        }}</b></span>
+                  </mat-option>
+                </a>
+                <hr>
+              </ng-container>
+            </mat-autocomplete>
+          </div>
+        </form>
+      </div>
+
 
 
 
