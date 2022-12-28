@@ -11,12 +11,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    // ListorderComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -27,7 +28,6 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     NgxPaginationModule,
     ToastrModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

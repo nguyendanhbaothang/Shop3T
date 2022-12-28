@@ -10,8 +10,7 @@
     line-height: 1.5;
     height: 35px;
     width: 71px;
-    margin: 57px -3px 2px 32px;
-
+    margin: 55px 52px 25px -21px;
   }
 
   a[id="dautru"] {
@@ -20,19 +19,11 @@
     line-height: 1.5;
     height: 35px;
     width: 71px;
-    margin: 57px -3px 2px 32px;
-  }
-  a[id="capnhat"] {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    height: 35px;
-    width: 55px;
-    margin: 57px -3px 2px 32px;
+    margin: 52px 59px 16px -19px;
   }
   .col-md-3.col-lg-3.col-xl-2.d-flex {
     margin: 2px -86px -20px 88px;
-}
+  }
 </style>
 <!-- Cart Start -->
 <div class="container-fluid">
@@ -47,7 +38,7 @@
             <th>Giá</th>
             <th>Tổng</th>
             <th>Gỡ bỏ</th>
-            <th>Cập nhật giỏ hàng</th>
+            <!-- <th>Cập nhật giỏ hàng</th> -->
           </tr>
         </thead>
         <tbody class="align-middle">
@@ -67,7 +58,7 @@
 
                 <a class="btn btn-link px-2" id="dautru"
                   onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                  (click)="updateQuantity(orders.id, quantity.value)">
+                  (click)="updateQuantity(orders.id, quantity.value)" >
                   <i class="lni lni-plus"></i>
                 </a>
               </div>
@@ -76,8 +67,6 @@
             <td class="align-middle">{{ (orders.price -100000) * orders.quantity |number }} VND</td>
             <td class="align-middle"><button class="btn btn-sm btn-danger" (click)="deleteCart(orders.id)"><i
                   class="fa fa-times"></i></button></td>
-            <td> <a id="capnhat" class="btn btn-primary px-3" (click)="updateCart()"><i class="fa fa-shopping-cart mr-1"></i></a></td>
-
           </tr>
         </tbody>
       </table>

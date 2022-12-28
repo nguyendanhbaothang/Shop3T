@@ -31,7 +31,8 @@
                     </div>
                     <small class="pt-1">(99 Đánh giá)</small>
                 </div>
-                  <h3 class="font-weight-semi-bold mb-4">{{ products.price -100000| currency:'VND'}} </h3>
+                <h3>Giá bán:  {{ products.price -100000| currency:'VND'}}</h3>
+                <h6 class="text-muted ml-2"><del>{{ products.price |currency :'VND'}} </del></h6>
 
 
                   <div class="d-flex align-items-center mb-4 pt-2">
