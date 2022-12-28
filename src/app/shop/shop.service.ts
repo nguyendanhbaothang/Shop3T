@@ -12,6 +12,9 @@ export class ShopService {
   product_listSer(): Observable<Product[]> {
     return this.http.get<Product[]>(environment.urlAllProducts);
   }
+
+
+
 constructor(private http: HttpClient) {}
 
 product_list(page:any): any {
@@ -53,10 +56,6 @@ tranding_top(): Observable<Product[]> {
 category_listSer(): any{
   return this.http.get(environment.urlAllCategories);
 }
-
-
-
-
 searchProductList(name:string){
   const response = new Promise(resolve => {
     this.http.get(environment.urlSearch+`product_list/search?
@@ -68,4 +67,11 @@ searchProductList(name:string){
   });
   return response;
 }
+product_hot(): any {
+  return this.http.get(environment.url +'api/trendingProduct');
+}
+product_new(): any {
+  return this.http.get(environment.url +'api/product_new');
+}
+
 }

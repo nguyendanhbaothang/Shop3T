@@ -29,7 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
     NgxPaginationModule,
     ToastrModule,
   ],
-  providers: [],
+  providers: [ToastrModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
