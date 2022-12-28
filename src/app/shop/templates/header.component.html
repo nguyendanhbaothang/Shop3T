@@ -40,7 +40,7 @@
       <form action="">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search for products" (input)="handdleSearch($event)" >
-          <!-- <mat-autocomplete #auto="matAutocomplete">
+          <mat-autocomplete #auto="matAutocomplete">
             <ng-container *ngFor="let product of products ">
               <a (click)="reloadCurrentPage(product.id)">
                 <mat-option class="search_main" [value]="product.name">
@@ -52,7 +52,7 @@
               </a>
               <hr>
             </ng-container>
-          </mat-autocomplete> -->
+          </mat-autocomplete>
         </div>
       </form>
     </div>
