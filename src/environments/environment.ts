@@ -9,4 +9,10 @@ export const environment = {
   urlIdProduct : urlApi+'product_detail',
   urlRemoveToCart : urlApi+'remove-to-cart/',
   urlUpdateQuantity : urlApi+'update-cart/',
+  urlSearch : urlApi,
+  urlAddToCartByLike : urlApi+'add-to-cart-by-like/',
+  urlDeleteCartByLike : urlApi+'remove-to-cart-by-like/',
+  urlGetAllCartByLike : urlApi+'list-cart-by-like',
+  urlTrendingPro : urlApi+'trendingProduct',
+  urlAllCategories : urlApi+'category_list',
 };

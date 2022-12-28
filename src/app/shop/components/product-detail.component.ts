@@ -35,12 +35,9 @@ export class ProductDetailComponent {
     });
   }
 
-  getCart(id:number) {
+  getCart(id: number) {
     this.shopService.addToCart(this.id).subscribe(res => {
-     alert('Thành công Thêm vào giỏ hàng!');
+      alert('Thành công Thêm vào giỏ hàng!');
     })
-
   }
-
-
 }

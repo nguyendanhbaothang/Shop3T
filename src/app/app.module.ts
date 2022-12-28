@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,6 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     NgxPaginationModule,
     ToastrModule,
-
   ],
   providers: [ToastrModule],
   bootstrap: [AppComponent]

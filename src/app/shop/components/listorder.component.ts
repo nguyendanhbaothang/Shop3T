@@ -12,10 +12,10 @@ export class ListorderComponent {
   customer_id: any;
   order: any;
   totalPrice: number = 0;
-  getAllCart:any;
+  getAllCart: any;
   url: string = environment.url;
   url_image = this.url + 'public/assets/product/';
-  message : {} = {};
+  message: {} = {};
   constructor(
     private ShopService: ShopService,
     private route: ActivatedRoute,
@@ -25,13 +25,18 @@ export class ListorderComponent {
     this.ShopService.getListOrder(this.customer_id).subscribe(res => {
       this.order = res;
       console.log(this.order);
-
+      for (let orderDetail of this.order) {
+        this.totalPrice += parseInt(orderDetail.price) * parseInt(orderDetail.quantity);
+      }
     })
   }
-  deleteCart(id:number){
+
+  deleteCart(id: number) {
     this.ShopService.RemoveToCart(id).subscribe(res => {
-     this.message = res;
-     window.location.reload();
+      this.message = res;
+      this.ShopService.getListOrder(this.customer_id).subscribe(res => {
+        this.order = res;
+      })
     })
   }
   updateQuantity(id: any, quantity: any){
@@ -39,4 +44,5 @@ export class ListorderComponent {
         this.getAllCart();
     });
 }
+
 }

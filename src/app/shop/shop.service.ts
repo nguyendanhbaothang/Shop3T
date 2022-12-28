@@ -9,9 +9,9 @@ import { Product } from "./shop";
   providedIn: 'root'
 })
 export class ShopService {
-tranding_top() {
-  throw new Error('Method not implemented.');
-}
+  product_listSer(): Observable<Product[]> {
+    return this.http.get<Product[]>(environment.urlAllProducts);
+  }
 
 
 
@@ -20,6 +20,7 @@ constructor(private http: HttpClient) {}
 product_list(page:any): any {
   return this.http.get(environment.urlAllProducts +'/'+ "?page="+page);
 }
+
 product_detail(id:any): any{
   return this.http.get(environment.urlIdProduct+'/'+id)
 }
@@ -37,6 +38,34 @@ RemoveToCart(id:any){
 }
 updateQuantity(id: any, quantity: any){
   return this.http.get(environment.urlUpdateQuantity+id+'/'+quantity);
+}
+addToCartByLike(id: number){
+  return this.http.get(environment.urlAddToCartByLike+id);
+}
+deleteCartByLike(id: any){
+  return this.http.get(environment.urlDeleteCartByLike+id);
+}
+getAllCartByLike(){
+  return this.http.get(environment.urlGetAllCartByLike);
+}
+tranding_top(): Observable<Product[]> {
+  return this.http.get<Product[]>(environment.urlTrendingPro);
+}
+
+
+category_listSer(): any{
+  return this.http.get(environment.urlAllCategories);
+}
+searchProductList(name:string){
+  const response = new Promise(resolve => {
+    this.http.get(environment.urlSearch+`product_list/search?
+    search=${name}`).subscribe(data => {
+      resolve(data)
+    }, err => {
+      console.log(err);
+    });
+  });
+  return response;
 }
 product_hot(): any {
   return this.http.get(environment.url +'api/trendingProduct');

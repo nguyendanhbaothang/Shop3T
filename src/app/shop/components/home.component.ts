@@ -19,11 +19,12 @@ export class HomeComponent {
   ngOnInit (){
     this.shopService.product_list(1).subscribe((res: { data: any;total:any}) => {
       console.log(res);
-      
+
       let products = res.data;
       this.products = products;
     })
   }
+
   product_list() {
     this.shopService.product_list(this?.limit).subscribe((res: { data: any; total:any}) => {
       this.total=res.total;
@@ -36,8 +37,4 @@ export class HomeComponent {
      alert('Thành công Thêm vào giỏ hàng!');
     })
   }
-
-
-
-
 }
