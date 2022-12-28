@@ -5,6 +5,7 @@ import { ProductListComponent } from './components/product-list.component';
 import { ListorderComponent } from './components/listorder.component';
 import { ProductDetailComponent } from './components/product-detail.component';
 import { ProductHotComponent } from './components/product-hot.component';
+import { ProductNewComponent } from './components/product-new.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'listorder', component: ListorderComponent },
   { path: 'product-detail/:id', component: ProductDetailComponent },
   { path: 'product-hot', component: ProductHotComponent },
+  { path: 'product-new', component: ProductNewComponent },
 ];
 
 @NgModule({

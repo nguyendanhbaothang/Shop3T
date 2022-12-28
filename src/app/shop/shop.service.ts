@@ -9,6 +9,9 @@ import { Product } from "./shop";
   providedIn: 'root'
 })
 export class ShopService {
+tranding_top() {
+  throw new Error('Method not implemented.');
+}
 
 
 
@@ -35,4 +38,11 @@ RemoveToCart(id:any){
 updateQuantity(id: any, quantity: any){
   return this.http.get(environment.urlUpdateQuantity+id+'/'+quantity);
 }
+product_hot(): any {
+  return this.http.get(environment.url +'api/trendingProduct');
+}
+product_new(): any {
+  return this.http.get(environment.url +'api/product_new');
+}
+
 }
