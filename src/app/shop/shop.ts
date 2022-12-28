@@ -9,9 +9,10 @@ export interface Product {
 export interface Order{
   note?: any;
   address: any;
+  email: any;
   name_customer: any;
-  customer_id: any;
-  image:{ url: string};
+  customer_id?: any;
+  // image:{ url: string};
   phone: any;
 }
 

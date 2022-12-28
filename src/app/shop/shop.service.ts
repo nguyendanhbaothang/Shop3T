@@ -30,7 +30,7 @@ getListOrder(id: any){
 addToCart(id: number){
   return this.http.get(environment.urlAddToCart+id);
 }
-getAllCart(id:any){
+getAllCart(){
   return this.http.get(environment.urlGetAllCart);
 }
 RemoveToCart(id:any){
@@ -51,7 +51,12 @@ getAllCartByLike(){
 tranding_top(): Observable<Product[]> {
   return this.http.get<Product[]>(environment.urlTrendingPro);
 }
-
+storeOrder(request: any){
+  return this.http.post(environment.urlOrderStore, request);
+}
+showOrder(id: any){
+  return this.http.get(environment.urlOrderShow+id);
+}
 
 category_listSer(): any{
   return this.http.get(environment.urlAllCategories);
