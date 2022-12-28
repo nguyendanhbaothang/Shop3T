@@ -3,26 +3,22 @@ import { environment } from 'src/environments/environment';
 import { ShopService } from '../shop.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: '../templates/home.component.html',
+  selector: 'app-product-new',
+  templateUrl: '../templates/product-new.component.html',
 })
-export class HomeComponent {
-  products:any[] = [];
-  url: string = environment.url;
-  trending_top:any[] =[];
-  constructor(
+export class ProductNewComponent {
+  constructor( 
     private shopService : ShopService,
-  ) { }
-  limit: number = 1;
-    total: number = 0;
+    // private toastr: ToastrService
 
-  ngOnInit (){
-    this.shopService.product_list(1).subscribe((res: { data: any;total:any}) => {
-      console.log(res);
-      
-      let products = res.data;
-      this.products = products;
-    })
+    ) { }
+    limit: number = 1;
+    total: number = 0;
+  url: string = environment.url;
+  products:any[] =[];
+
+  ngOnInit(): void {
+    this.trending();
   }
   product_list() {
     this.shopService.product_list(this?.limit).subscribe((res: { data: any; total:any}) => {
@@ -31,13 +27,17 @@ export class HomeComponent {
       console.log(this.products);
     })
   }
+
+  trending(){
+    this.shopService.product_new().subscribe((res:any) => {
+      let products = res;
+      // console.log(res);
+      this.products = products;
+    })
+  }
   addToCart(id: number) {
     this.shopService.addToCart(id).subscribe(res => {
      alert('Thành công Thêm vào giỏ hàng!');
     })
   }
-
-
-
-
 }
