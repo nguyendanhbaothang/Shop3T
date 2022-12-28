@@ -12,10 +12,16 @@ import { ProductDetailComponent } from './components/product-detail.component';
 import { ListorderComponent } from './components/listorder.component';
 import { ProductHotComponent } from './components/product-hot.component';
 import { ProductNewComponent } from './components/product-new.component';
+// import { HeaderComponent } from './components/header.component';
+import { CheckoutComponent } from './components/checkout.component';
+import { OrderDetailComponent } from './components/order-detail.component';
+
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
+
 
 
 @NgModule({
@@ -26,7 +32,10 @@ import { MatInputModule } from '@angular/material/input';
     ProductDetailComponent,
     ListorderComponent,
     ProductHotComponent,
-    ProductNewComponent
+    ProductNewComponent,
+    // HeaderComponent,
+    CheckoutComponent,
+    OrderDetailComponent
   ],
   imports: [
     CommonModule,

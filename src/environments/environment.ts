@@ -15,4 +15,6 @@ export const environment = {
   urlGetAllCartByLike : urlApi+'list-cart-by-like',
   urlTrendingPro : urlApi+'trendingProduct',
   urlAllCategories : urlApi+'category_list',
+  urlOrderStore:urlApi+'order/store',
+  urlOrderShow : urlApi+'order/show/',
 };
