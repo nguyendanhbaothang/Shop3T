@@ -20,18 +20,18 @@ export class ProductListComponent implements OnInit {
   cate_id: any;
   limit: number = 1;
   total: number = 0;
-  itemsPerPage :number =0;
+  itemsPerPage: number = 0;
   url: string = environment.url;
   orderService: any;
   listCart: any;
   cartSubtotal: number = 0;
   active = 0;
-  trending_top:any[] =[];
+  trending_top: any[] = [];
   quantity1000000_10000000: any;
   quantity10000000_15000000: any;
   quantity15000000_20000000: any;
   quantity20000000_25000000: any;
-  lenghtFilter1_10:any = 0;
+  lenghtFilter1_10: any = 0;
   category_id: any;
   categories: any;
 
@@ -52,63 +52,63 @@ export class ProductListComponent implements OnInit {
     });
   }
   product_list() {
-    this.shopService.product_list(this?.limit).subscribe((res: { data: any; total:any}) => {
-      this.total=res.total;
+    this.shopService.product_list(this?.limit).subscribe((res: { data: any; total: any }) => {
+      this.total = res.total;
       this.products = res.data;
 
     })
   }
-  fillter1_10(){
+  fillter1_10() {
     let obj = []
     for (const product of this.products) {
-       if (product.price >= 1000000 && product.price <= 10000000) {
+      if (product.price >= 1000000 && product.price <= 10000000) {
         obj.push(product);
-       }
+      }
     }
     this.products = obj;
   }
 
-  fillter10_15(){
+  fillter10_15() {
     let obj = []
     for (const product of this.products) {
-       if (product.price >= 10000000 && product.price <= 15000000) {
+      if (product.price >= 10000000 && product.price <= 15000000) {
         obj.push(product);
-       }
+      }
     }
     this.products = obj;
   }
 
-  fillter15_20(){
+  fillter15_20() {
     let obj = []
     for (const product of this.products) {
-       if (product.price >= 15000000 && product.price <= 20000000) {
+      if (product.price >= 15000000 && product.price <= 20000000) {
         obj.push(product);
-       }
+      }
     }
     this.products = obj;
   }
 
-  fillter20_25(){
+  fillter20_25() {
     let obj = []
     for (const product of this.products) {
-       if (product.price >= 20000000 && product.price <= 25000000) {
+      if (product.price >= 20000000 && product.price <= 25000000) {
         obj.push(product);
-       }
+      }
     }
     this.products = obj;
   }
 
-  fillter25_100(){
+  fillter25_100() {
     let obj = []
     for (const product of this.products) {
-       if (product.price >= 25000000 && product.price <= 100000000) {
+      if (product.price >= 25000000 && product.price <= 100000000) {
         obj.push(product);
-       }
+      }
     }
     this.products = obj;
   }
 
-  pageChangeEvent(page: number){
+  pageChangeEvent(page: number) {
     this.limit = page;
     this.shopService.product_list(page).subscribe((res: { data: any; }) => {
       let products = res.data;
@@ -118,19 +118,11 @@ export class ProductListComponent implements OnInit {
 
   addToCart(id: number) {
     this.shopService.addToCart(id).subscribe(res => {
-     alert('Thành công Thêm vào giỏ hàng!');
+      alert('Thành công Thêm vào giỏ hàng!');
     })
   }
-
-  addToCartByLike(id: number) {
-    this.shopService.addToCartByLike(id).subscribe(res => {
-     alert('Thành công Thêm vào giỏ hàng yêu thích!');
-
-    })
-  }
-
-  trending(){
-    this.shopService.tranding_top().subscribe(res =>{
+  trending() {
+    this.shopService.tranding_top().subscribe(res => {
       this.trending_top = res;
     })
   }
