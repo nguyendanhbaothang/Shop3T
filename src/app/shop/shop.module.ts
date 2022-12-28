@@ -17,6 +17,12 @@ import { CheckoutComponent } from './components/checkout.component';
 import { OrderDetailComponent } from './components/order-detail.component';
 
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatInputModule } from '@angular/material/input';
+
+
 
 @NgModule({
   declarations: [
@@ -38,7 +44,12 @@ import { OrderDetailComponent } from './components/order-detail.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatSliderModule,
+    MatInputModule
+
 
   ]
 })
