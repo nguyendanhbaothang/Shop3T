@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { ShopService } from '../shop.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-list',
@@ -9,6 +10,7 @@ import { ShopService } from '../shop.service';
 })
 export class ProductListComponent implements OnInit {
   constructor(private shopService: ShopService,
+
   ) { }
 
   data: any;

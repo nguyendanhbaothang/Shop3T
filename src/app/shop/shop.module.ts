@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
+import { LoginComponent } from './components/login.component';
+import { RegisterComponent } from './components/register.component';
 
 
 
@@ -35,7 +37,9 @@ import { MatInputModule } from '@angular/material/input';
     ProductNewComponent,
     // HeaderComponent,
     CheckoutComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,

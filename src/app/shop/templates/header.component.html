@@ -15,8 +15,18 @@
         <div class="btn-group">
           <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản của bạn</button>
           <div class="dropdown-menu dropdown-menu-right">
-            <button class="dropdown-item" type="button">Đăng nhập</button>
-            <button class="dropdown-item" type="button">Đăng kí</button>
+           <li *ngIf="!check">
+              <a href="#" class="dropdown-item" [routerLink]="['/login']">
+                <i class="flaticon-round-account-button-with-user-inside"></i>
+                Đăng Nhập
+              </a>
+            </li>
+            <li *ngIf="check">
+              <a href="#" class="dropdown-item" (click)="logout()">
+                <i class="flaticon-round-account-button-with-user-inside"></i>
+                Đăng Xuất
+              </a>
+            </li>
           </div>
         </div>
       </div>
@@ -87,7 +97,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav mr-auto py-0">
-            <a [routerLink]="[ 'home']" class="nav-item nav-link active">Trang chủ</a>
+            <a [routerLink]="[ 'home']" class="nav-item nav-link">Trang chủ</a>
             <a [routerLink]="[ 'products']" class="nav-item nav-link">Tất cả sản phẩm</a>
             <a [routerLink]="[ 'product-new']" class="nav-item nav-link">Sản phẩm mới</a>
             <a [routerLink]="[ 'product-hot']" class="nav-item nav-link">Sản phẩm hót</a>

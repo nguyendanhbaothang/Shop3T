@@ -16,3 +16,10 @@ export interface Order{
   phone: any;
 }
 
+export interface User {
+  name?:any;
+  address?:any;
+  phone?:any;
+  email:any;
+  password:any;
+}

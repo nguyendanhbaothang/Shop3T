@@ -64,8 +64,8 @@
                 </a>
               </div>
             </td>
-            <td class="align-middle">{{ orders.price -100000|number }} VND</td>
-            <td class="align-middle">{{ (orders.price -100000) * orders.quantity |number }} VND</td>
+            <td class="align-middle">{{ orders.price |number }} VND</td>
+            <td class="align-middle">{{ orders.price * orders.quantity |number }} VND</td>
             <td class="align-middle"><button class="btn btn-sm btn-danger" (click)="deleteCart(orders.id)"><i
                   class="fa fa-times"></i></button></td>
           </tr>
@@ -80,7 +80,7 @@
           <div class="border-bottom pb-2" *ngFor="let  orders of order">
               <div class="d-flex justify-content-between mb-3">
                   <h6>{{orders.name}}</h6>
-                  <h6>{{orders.price*orders.quantity -100000|number}} VND</h6>
+                  <h6>{{orders.price*orders.quantity|number}} VND</h6>
               </div>
 
           </div>
