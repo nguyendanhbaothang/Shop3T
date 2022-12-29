@@ -17,4 +17,6 @@ export const environment = {
   urlAllCategories : urlApi+'category_list',
   urlOrderStore:urlApi+'order/store',
   urlOrderShow : urlApi+'order/show/',
+  urlRegister: urlApi + 'auth/register',
+  urlLogin: urlApi + 'auth/login-customer',
 };

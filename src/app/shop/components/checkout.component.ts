@@ -27,7 +27,7 @@ export class CheckoutComponent {
 
   ngOnInit(): void {
     // this.profile();
-    // this.getAllCart();
+    this.getAllCart();
     this.form = new FormGroup({
       name_customer: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.required),
@@ -48,7 +48,20 @@ export class CheckoutComponent {
       }
     });
   }
-
+  // profile(){
+  //   if(this.ShopService.checkAuth()) {
+  //       this.ShopService.profile().subscribe(res =>{
+  //         this.id = res.id;
+  //         this.name = res.name;
+  //         this.email = res.email;
+  //       },e=>{
+  //         console.log(e);
+  //       })
+  //   }
+  //   else{
+  //     this._Router.navigate(['/login']);
+  //   }
+  // }
   submit() {
     let order: any;
     let id = this.id;

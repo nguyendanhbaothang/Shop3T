@@ -78,5 +78,8 @@ product_hot(): any {
 product_new(): any {
   return this.http.get(environment.url +'api/product_new');
 }
-
+checkAuth():any{
+  let token = localStorage.getItem('access_token');
+  return token;
+}
 }

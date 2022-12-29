@@ -11,6 +11,7 @@ export class ProductDetailComponent {
   constructor(
     private shopService: ShopService,
     private _route: ActivatedRoute,
+    
   ) { }
   toastr: any;
   url: string = environment.url;
