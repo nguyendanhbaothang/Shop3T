@@ -29,8 +29,10 @@ export class LoginComponent implements OnInit {
   onSubmit():void{
     let data = this.loginForm.value;
     let User: User = {
-      email:data.email, 
-      password:data.password,
+      email: data.email,
+      password: data.password,
+      address: undefined,
+      phone: undefined
     }
     console.log(User);
 

@@ -10,7 +10,7 @@
     line-height: 1.5;
     height: 35px;
     width: 71px;
-    margin: 55px 52px 25px -21px;
+    margin:52px 25px 15px -49px;
   }
 
   a[id="dautru"] {
@@ -21,12 +21,10 @@
     width: 71px;
     margin: 52px 59px 16px -19px;
   }
-
   .col-md-3.col-lg-3.col-xl-2.d-flex {
     margin: 2px -86px -20px 88px;
   }
 </style>
-<!-- Cart Start -->
 <div class="container-fluid">
   <div class="row px-xl-12">
     <div class="col-lg-8  table-responsive mb-5">
@@ -39,7 +37,6 @@
             <th>Giá</th>
             <th>Tổng</th>
             <th>Gỡ bỏ</th>
-            <!-- <th>Cập nhật giỏ hàng</th> -->
           </tr>
         </thead>
         <tbody class="align-middle">
@@ -53,10 +50,8 @@
                   (click)="updateQuantity(orders.id, quantity.value)">
                   <i class="lni lni-minus"></i>
                 </a>
-
                 <input #quantity id="form1" min="1" max="3" name="quantity" value="{{ orders.quantity }}" type="number"
                   class="form-control form-control-sm" />
-
                 <a class="btn btn-link px-2" id="dautru"
                   onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                   (click)="updateQuantity(orders.id, quantity.value)">
@@ -71,27 +66,21 @@
           </tr>
         </tbody>
       </table>
-
     </div>
-
     <div class="col-lg-4" >
-      <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Cart Summary</span></h5>
+      <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Tóm tắt giỏ hàng</span></h5>
       <div class="bg-light p-30 mb-5" >
           <div class="border-bottom pb-2" *ngFor="let  orders of order">
               <div class="d-flex justify-content-between mb-3">
                   <h6>{{orders.name}}</h6>
                   <h6>{{orders.price*orders.quantity|number}} VND</h6>
               </div>
-
           </div>
-
           <div class="pt-2">
               <button class="btn btn-block btn-primary font-weight-bold my-3 py-3" routerLink='/checkout'>Thanh toán</button>
           </div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- Cart End -->

@@ -1,4 +1,3 @@
-<!-- Checkout Start -->
 <div class="container-fluid">
   <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="row px-xl-5">
@@ -15,10 +14,8 @@
               *ngIf="!form.controls['name_customer']?.valid && (form.controls['name_customer']?.dirty
       ||form.controls['name_customer']?.touched) && form.controls['name_customer']?.errors?.['required']"
               class="help-block text-danger"
-              >Tên không được để trống!</small
-            >
+              >Tên không được để trống!</small>
             </div>
-
             <div class="col-md-6 form-group">
               <label>E-mail</label>
               <input class="form-control" formControlName="email" type="text" placeholder="Nhập email">
@@ -70,7 +67,6 @@
               <p>{{cartItem.name}}</p>
               <p>{{cartItem.price*cartItem.quantity |number}} VND</p>
             </div>
-
           </div>
           <div class="pt-2">
             <div class="d-flex justify-content-between mt-2">
@@ -84,4 +80,3 @@
     </div>
   </form>
 </div>
-<!-- Checkout End -->

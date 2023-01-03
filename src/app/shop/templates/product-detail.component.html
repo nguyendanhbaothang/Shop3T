@@ -22,17 +22,7 @@
       <div class="h-100 bg-light p-30">
         <h3>Đồng hồ :{{products.name}}</h3>
         <h3>Thể loại :{{products.category.name}}</h3>
-        <div class="d-flex mb-3">
-          <div class="text-primary mr-2">
-            <small class="fas fa-star"></small>
-            <small class="fas fa-star"></small>
-            <small class="fas fa-star"></small>
-            <small class="fas fa-star"></small>
-            <small class="fas fa-star-half-alt"></small>
-          </div>
-          <small class="pt-1">(99 Đánh giá)</small>
-        </div>
-        <h3>Giá bán: {{ products.price| currency:'VND'}}</h3>
+        <h3>Giá bán: {{ products.price| number}} VND</h3>
         <div class="d-flex align-items-center mb-4 pt-2">
           <a class="btn btn-primary px-3" (click)="getCart(id)"><i class="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ
             hàng</a>
