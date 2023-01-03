@@ -6,6 +6,7 @@ import { ShopService } from '../shop.service';
 import { ToastrService } from 'ngx-toastr';
 import { Order } from '../shop';
 import Swal from 'sweetalert2';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-checkout',
@@ -24,11 +25,19 @@ export class CheckoutComponent {
   listWard: any;
   provinceSelected: boolean = false;
   districtSelected: boolean = false;
+  login: any
 
+  constructor(
+    private ShopService: ShopService,
+    private _Router: Router,
+    private _UserService: AuthService,
+  ) {}
 
   ngOnInit(): void {
-    // this.profile();
+    this.login =  this._UserService.checkAuth()
+    console.log(this.login);
     this.getAllCart();
+
     this.form = new FormGroup({
       name_customer: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.required),
@@ -37,9 +46,6 @@ export class CheckoutComponent {
     });
     this.getAllCart()
   }
-  constructor(
-    private ShopService: ShopService,
-    private _Router: Router,) {}
   getAllCart() {
     this.ShopService.getAllCart().subscribe(res => {
       this.listCart = res;
