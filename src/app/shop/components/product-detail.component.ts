@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ShopService } from '../shop.service';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: '../templates/product-detail.component.html',
@@ -11,7 +13,7 @@ export class ProductDetailComponent {
   constructor(
     private shopService: ShopService,
     private _route: ActivatedRoute,
-    
+
   ) { }
   toastr: any;
   url: string = environment.url;
@@ -38,7 +40,25 @@ export class ProductDetailComponent {
 
   getCart(id: number) {
     this.shopService.addToCart(this.id).subscribe(res => {
-      alert('Thành công Thêm vào giỏ hàng!');
+      const Toast = Swal.mixin({
+        toast: true,
+        width: 400,
+        position: 'top-end',
+        color: 'rgb(255, 255, 255)',
+        padding: '2em',
+        showConfirmButton: false,
+        background: 'rgb(108, 108, 108)',
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Thêm vào giỏ hàng thành công!'
+      })
     })
   }
 }

@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { ShopService } from '../shop.service';
 import { ToastrService } from 'ngx-toastr';
 import { Order } from '../shop';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-checkout',
@@ -48,20 +49,6 @@ export class CheckoutComponent {
       }
     });
   }
-  // profile(){
-  //   if(this.ShopService.checkAuth()) {
-  //       this.ShopService.profile().subscribe(res =>{
-  //         this.id = res.id;
-  //         this.name = res.name;
-  //         this.email = res.email;
-  //       },e=>{
-  //         console.log(e);
-  //       })
-  //   }
-  //   else{
-  //     this._Router.navigate(['/login']);
-  //   }
-  // }
   submit() {
     let order: any;
     let id = this.id;
@@ -75,9 +62,16 @@ export class CheckoutComponent {
     console.log(Order);
     this.ShopService.storeOrder(Order).subscribe(res => {
       order = res;
-      this.listCart.alert('Thành công', 'Đặt hàng thành công!');
-      this._Router.navigate(['order-detail', order.id]);
+      Swal.fire({
+        icon: 'success',
+        title: 'Đặt hàng thành công!',
+        text: 'Bây giờ tiếp tục mua hàng nhé!',
+        confirmButtonText: 'Tuyệt',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this._Router.navigate(['order-detail']);
+        }
+      })
     });
-
   }
 }

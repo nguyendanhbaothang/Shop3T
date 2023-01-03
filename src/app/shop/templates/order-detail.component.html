@@ -1,99 +1,89 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
-    <div class="mb-3 text-center">
-        <h2>Chi tiết đặt hàng</h2>
-    </div>
-    <div class="d-flex justify-content-between align-items-center py-3">
-        <h5>Mã đặt hàng: {{ orderId }}</h5>
-    </div>
+<section class="page-header">
+  <div class="container">
     <div class="row">
-        <div class="col-lg-8">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="mb-3 d-flex justify-content-between">
-                        <div>
-                            <span class="me-3">Ngày đặt: {{ order.created_at |date :'d/M/y, h:mm:ss a' }}</span>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <span class="me-3">Tên khách hàng: {{ order.name_customer }}</span>
-                    </div>
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr>
-                                <td>Ảnh</td>
-                                <td>Sản Phẩm</td>
-                                <td>Số lượng</td>
-                                <td class="text-end">Giá</td>
-                                <td class="text-end">Tổng phụ</td>
-                            </tr>
-                            <tr *ngFor="let orderDetail of order.order_details">
-                                <td>
-                                    <div class="d-flex mb-2">
-                                        <div class="flex-shrink-0">
-                                            <img [src]="url+'storage/images/product/'+orderDetail.products.image"
-                                                alt="" width="65" class="img-fluid">
-                                        </div>
-                                        </div>
-                                </td>
-                                <td>
-                                        <div class="flex-lg-grow-1 ms-3">
-                                            <h6 class="small mb-0">
-                                                <a routerLink='/product-detail/{{orderDetail.products.id}}' class="text-end">{{ orderDetail.products.name }}</a>
-                                            </h6>
-                                        </div>
-
-                                </td>
-                                <td>{{ orderDetail.quantity }}</td>
-                                <td class="text-end">{{ orderDetail.price_at_time|number }}</td>
-                                <td class="text-end">{{ orderDetail.price_at_time * orderDetail.quantity|number }}</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr class="fw-bold">
-                                <td colspan="4">Tổng tiền hàng</td>
-                                <td class="text-end">{{ totalPrice|number }} VNĐ</td>
-                            </tr>
-                            <tr class="fw-bold">
-                                <td colspan="4">Phí vận chuyển</td>
-                                <td class="text-end">25,000 VNĐ</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <h3 class="h6">Phương thức thanh toán</h3>
-                            <p>Thanh toán khi nhận hàng<br>
-                                Tổng thanh toán: {{ totalPrice + 25000| number }} <span class="badge bg-success rounded-pill">VNĐ</span></p>
-                        </div>
-                        <div class="col-lg-6">
-                            <h3 class="h6">Địa chỉ thanh toán</h3>
-                                <div>
-                                    <strong><i>{{ order.address }}</i></strong>
-                                </div>
-                                <div>
-                                    <strong><i>{{ order.ward.name }}, {{ order.district.name }},{{ order.province.name }} </i></strong>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="col-md-12">
+        <div class="content">
+          <h2 class="page-name">Chi tiết mua hàng</h2>
+          <ol class="breadcrumb">
+            <li><a [routerLink]="['/home']">Trang Chủ</a></li>
+          </ol>
         </div>
-        <div class="col-lg-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h3 class="h6">Ghi chú/yêu cầu</h3>
-                    <p>{{ order.note }}</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <title></title>
+  <style>
+    table,
+    td,
+    div,
+    h1,
+    p {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body style="margin:0;padding:0;">
+  <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
+    <tr>
+      <td align="center" style="padding:0;">
+        <table role="presentation"
+          style="width:602px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
+          <div style="text-align:center;">
+            <img
+            src="assets/img/1.jpg"
+              alt="" width="260" />
+          </div>
+          <tr>
+            <td style="padding:36px 30px 42px 30px;">
+              <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+                <h1 style="text-align:center;">Đơn hàng của bạn đã được lưu vào hệ thống</h1>
+                <h4 style="color: rgb(24, 67, 255); text-align:center;">Chúng tôi sẽ sớm liên hệ với bạn để xác nhận đơn
+                  hàng!</h4>
+                <tr>
+                  <td style="padding:0 0 36px 0;color:#153643;">
+
+                    <p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">
+                  </td>
+                </tr>
+                <br>
+                <p>
+                  Xin gửi lời cám ơn chân thành và sâu sắc nhất đến Quý khách hàng đã tin tưởng lựa chọn và sử dụng dịch
+                  vụ của chúng tôi trong thời gian vừa qua. Đây là một món quà vô giá đối với chúng tôi.
+                  Nhờ sự tin tưởng của Quý khách hàng mà chúng tôi có được sự thành công như ngày hôm nay.
+                </p>
+                <h3>Trân Trọng!</h3>
+
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:30px;background:#ebe2e2;">
+              <table role="presentation"
+                style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;">
+                <tr>
+                  <td style="padding:0;width:50%;" align="left">
+                    <p style="margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:#141313;">
+                      &reg; 3TShope, limited 2023<br />
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
