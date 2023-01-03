@@ -19,21 +19,21 @@ export class HomeComponent {
 
 
   ngOnInit() {
-    this.shopService.product_list(1).subscribe((res: { data: any; total: any }) => {
+    this.shopService.product_hot().subscribe((res:any) => {
       // console.log(res);
 
-      let products = res.data;
+      let products = res;
       this.products = products;
     })
   }
 
-  product_list() {
-    this.shopService.product_list(this?.limit).subscribe((res: { data: any; total: any }) => {
-      this.total = res.total;
-      this.products = res.data;
-      console.log(this.products);
-    })
-  }
+  // product_list() {
+  //   this.shopService.product_list(this?.limit).subscribe((res: { data: any; total: any }) => {
+  //     this.total = res.total;
+  //     this.products = res.data;
+  //     console.log(this.products);
+  //   })
+  // }
   addToCart(id: number) {
     this.shopService.addToCart(id).subscribe(res => {
       const Toast = Swal.mixin({
