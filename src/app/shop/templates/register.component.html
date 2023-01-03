@@ -1,0 +1,94 @@
+<div class="container-fluid">
+  <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Đăng kí tài
+      khoản </span></h2>
+  <div class="row px-xl-5">
+    <div class="col-lg-7 mb-5">
+      <div class="contact-form bg-light p-30">
+        <div id="success"></div>
+        <form name="sentMessage" id="contactForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="control-group">
+            <input formControlName="name" type="text" class="form-control" id="name" placeholder="Họ và tên" name="name"
+              data-validation-required-message="Please enter your name"/><br/>
+            <small class="label label-danger" *ngIf="!registerForm.controls['name']?.valid && (registerForm.controls['name']?.dirty
+                ||registerForm.controls['name']?.touched) && registerForm.controls['name']?.errors?.['required']"
+              class="help-block text-danger">Trường bắt buộc!</small>
+          </div>
+          <div class="control-group">
+            <input formControlName="email" type="email" class="form-control" id="email" placeholder="Tài khoản Email"
+              name="email"/><br/>
+            <small class="label label-danger" *ngIf="!registerForm.controls['email']?.valid && (registerForm.controls['email']?.dirty
+              ||registerForm.controls['email']?.touched) && registerForm.controls['email']?.errors?.['required']"
+              class="help-block text-danger">Trường bắt buộc!</small>
+            <small class="label label-danger" *ngIf="!registerForm.controls['email']?.valid && (registerForm.controls['email']?.dirty
+              ||registerForm.controls['email']?.touched) && registerForm.controls['email']?.errors?.['email']"
+              class="help-block text-danger">Email không đúng định dạng!</small>
+            <small class="label label-danger" *ngIf="error" class="help-block text-danger">
+              Email đã tồn tại
+            </small>
+          </div>
+          <div class="control-group">
+            <input formControlName="phone" type="text" id="phone" class="form-control" name="phone"
+              placeholder="Số điện thoại"/><br/>
+            <small class="label label-danger" *ngIf="!registerForm.controls['phone']?.valid && (registerForm.controls['phone']?.dirty
+                  ||registerForm.controls['phone']?.touched) && registerForm.controls['phone']?.errors?.['required']"
+              class="help-block text-danger">Trường bắt buộc!</small>
+          </div>
+          <div class="form-group">
+            <input formControlName="address" type="text" id="address" class="form-control" name="address "
+              placeholder="Địa chỉ" /><br/>
+            <small class="label label-danger" *ngIf="
+             registerForm.controls['address']?.errors?.['required']" class="help-block text-danger">Trường bắt
+              buộc!</small>
+          </div>
+          <div class="form-group">
+            <input formControlName="password" type="password" id="password" class="form-control" name="password"
+              placeholder="Mật khẩu" /><br/>
+            <small class="label label-danger" *ngIf="!registerForm.controls['password']?.valid && (registerForm.controls['password']?.dirty
+        ||registerForm.controls['password']?.touched) && registerForm.controls['password']?.errors?.['required']"
+              class="help-block text-danger">Trường bắt buộc!</small>
+            <small class="label label-danger" *ngIf="!registerForm.controls['password']?.valid && (registerForm.controls['password']?.dirty
+        ||registerForm.controls['password']?.touched) && registerForm.controls['password']?.errors?.['minlength']"
+              class="help-block text-danger">Mật khẩu tối thiểu 5 ký tự!</small>
+          </div>
+          <div class="form-group">
+            <input formControlName="confirmPassword" type="password" id="name" class="form-control"
+              name="confirmPassword" placeholder="Xác nhận mật khẩu" /><br/>
+            <small class="label label-danger"
+              *ngIf="!registerForm.controls['confirmPassword']?.valid && (registerForm.controls['confirmPassword']?.dirty
+        ||registerForm.controls['confirmPassword']?.touched) && registerForm.controls['confirmPassword']?.errors?.['required']"
+              class="help-block text-danger">Trường bắt buộc!</small>
+            <small class="label label-danger"
+              *ngIf="!registerForm.controls['confirmPassword']?.valid && (registerForm.controls['confirmPassword']?.dirty
+        ||registerForm.controls['confirmPassword']?.touched) && registerForm.controls['confirmPassword']?.errors?.['minlength']"
+              class="help-block text-danger">Mật khẩu tối thiểu 5 ký tự!</small>
+            <small class="help-block text-danger" *ngIf="passwordMatchError">
+              Xác nhận mật khẩu không đúng!
+            </small>
+          </div>
+          <div class="form-group">
+            <div class="form-check"></div>
+          </div>
+          <div class="text-center">
+            <button [disabled]="!registerForm.valid" type="submit" class="btn common-btn btn-primary">Đăng kí</button>
+          </div>
+        </form>
+        <p class="mt-20">Bạn đã có tài khoản ?<a [routerLink]="['/login']"> Đăng nhập</a></p>
+        <p><a> Quên mật khẩu ?</a></p>
+      </div>
+    </div>
+
+
+    <div class="col-lg-5 mb-5">
+      <div class="bg-light p-30 mb-30">
+        <iframe style="width: 100%; height: 250px;"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+          frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+      <div class="bg-light p-30 mb-3">
+        <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>133 Lý Thường kiệt</p>
+        <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>3TShop@gmail.com</p>
+        <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>0123456789</p>
+      </div>
+    </div>
+  </div>
+</div>
