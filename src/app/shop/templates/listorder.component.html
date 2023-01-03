@@ -35,7 +35,7 @@
             <th>Tên sản phẩm</th>
             <th>số lượng</th>
             <th>Giá</th>
-            <th>Tổng</th>
+            <th>Thành tiền</th>
             <th>Gỡ bỏ</th>
           </tr>
         </thead>
@@ -48,14 +48,18 @@
                 <a class="btn btn-link px-2" id="dautru"
                   onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                   (click)="updateQuantity(orders.id, quantity.value)">
-                  <i class="lni lni-minus"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                  </svg>
                 </a>
                 <input #quantity id="form1" min="1" max="3" name="quantity" value="{{ orders.quantity }}" type="number"
                   class="form-control form-control-sm" />
                 <a class="btn btn-link px-2" id="dautru"
                   onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                   (click)="updateQuantity(orders.id, quantity.value)">
-                  <i class="lni lni-plus"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
                 </a>
               </div>
             </td>
@@ -72,8 +76,8 @@
       <div class="bg-light p-30 mb-5" >
           <div class="border-bottom pb-2" *ngFor="let  orders of order">
               <div class="d-flex justify-content-between mb-3">
-                  <h6>{{orders.name}}</h6>
-                  <h6>{{orders.price*orders.quantity|number}} VND</h6>
+                  <h4>{{orders.name}}</h4>
+                  <h4>{{orders.price*orders.quantity|number}} VND</h4>
               </div>
           </div>
           <div class="pt-2">

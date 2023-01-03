@@ -18,8 +18,8 @@ export interface Order{
 
 export interface User {
   name?:any;
-  address:any;
-  phone:any;
+  address?:any;
+  phone?:any;
   email:any;
   password:any;
 }
