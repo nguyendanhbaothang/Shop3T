@@ -12,7 +12,7 @@ export class ListorderComponent {
   customer_id: any;
   order: any;
   totalPrice: number = 0;
-  getAllCart: any;
+  // getAllCart: any;
   url: string = environment.url;
   url_image = this.url + 'public/assets/product/';
   message: {} = {};
@@ -23,14 +23,12 @@ export class ListorderComponent {
   ) { }
 
   ngOnInit(): void {
-
-    this.ShopService.getListOrder(this.customer_id).subscribe(res => {
-      this.order = res;
-      console.log(this.order);
-      for (let orderDetail of this.order) {
-        this.totalPrice += parseInt(orderDetail.price) * parseInt(orderDetail.quantity);
-      }
-    })
+    this.getAllCart();
+  }
+    getAllCart() {
+        this.ShopService.getAllCart().subscribe(res => {
+            this.order = res;
+        });
   }
 
   deleteCart(id: number) {
